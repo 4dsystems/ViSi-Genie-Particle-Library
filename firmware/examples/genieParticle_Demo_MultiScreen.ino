@@ -1,5 +1,5 @@
 #include "genieParticle/genieParticle.h"
-#include "Serial2.h"
+#include "Serial2/Serial2.h"
 
 // This Demo extends the genieParticle_Demo, by showing how to use more than 1 screen at a time, attached to an Particle Proton with 2+ Serial Ports.
 // This Demo uses the same WS4 Genie program on both displays, in this case, 2x uLCD-32PTU's, and a Particle Proton.

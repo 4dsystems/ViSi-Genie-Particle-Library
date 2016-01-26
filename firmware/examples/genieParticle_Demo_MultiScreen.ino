@@ -1,4 +1,4 @@
-#include <genieArduino.h>
+#include <genieParticle.h>
 #include "Serial2.h"
 
 // This Demo extends the genieParticle_Demo, by showing how to use more than 1 screen at a time, attached to an Particle Proton with 2+ Serial Ports.

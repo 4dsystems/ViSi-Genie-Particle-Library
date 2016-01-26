@@ -9,7 +9,7 @@
  * 
  */
 
-#include <genieArduino.h>
+#include <genieParticle.h>
 
 Genie genie;
 

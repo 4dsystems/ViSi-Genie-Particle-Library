@@ -1,4 +1,4 @@
-#include <genieParticle.h>
+#include "genieParticle/genieParticle.h"
 
 // This Demo communicates with a 4D Systems Display, configured with ViSi-Genie, utilising the Genie Particle Library - https://github.com/4dsystems/ViSi-Genie-Particle-Library
 // The display has a slider, a cool gauge, an LED Digits, a string box and a User LED.

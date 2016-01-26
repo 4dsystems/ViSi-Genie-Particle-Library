@@ -40,17 +40,15 @@
  *    If not, see <http://www.gnu.org/licenses/>.
  *********************************************************************/
 
-#if defined(SPARK)
-	#include "application.h"
-	#define lowByte(w) ((uint8_t)((w) & 0xFF))
-	#define highByte(w) ((uint8_t)((w) >> 8))
-#endif
+#include "application.h"
+#define lowByte(w) ((uint8_t)((w) & 0xFF))
+#define highByte(w) ((uint8_t)((w) >> 8))
 
 #include <inttypes.h>
 #include <stdint.h>
 
-#ifndef GenieParticle_h
-#define GenieParticle_h
+#ifndef genieParticle_h
+#define genieParticle_h
 
 #undef GENIE_DEBUG
 

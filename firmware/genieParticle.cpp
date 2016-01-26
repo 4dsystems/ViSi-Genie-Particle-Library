@@ -39,8 +39,8 @@
  *    License along with GenieParticle.
  *    If not, see <http://www.gnu.org/licenses/>.
  *********************************************************************/
-//#include <Streaming.h>
-#include "GenieParticle.h"
+
+#include "genieParticle/genieParticle.h"
 #include <math.h>
 #include <string.h>
 

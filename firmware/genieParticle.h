@@ -44,8 +44,8 @@
 #define lowByte(w) ((uint8_t)((w) & 0xFF))
 #define highByte(w) ((uint8_t)((w) >> 8))
 
-#include <inttypes.h>
-#include <stdint.h>
+//#include <inttypes.h>
+//#include <stdint.h>
 
 #ifndef genieParticle_h
 #define genieParticle_h

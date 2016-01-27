@@ -1,4 +1,4 @@
-/////////////////////// GenieParticle 26/01/2016 ///////////////////////
+/////////////////////// GenieParticle 28/01/2016 ///////////////////////
 //
 //      Library to utilise the 4D Systems Genie interface to displays
 //      that have been created using the Visi-Genie creator platform.
@@ -40,9 +40,9 @@
  *    If not, see <http://www.gnu.org/licenses/>.
  *********************************************************************/
 
-#include "genieParticle.h"
-//#include <math.h>
-//#include <string.h>
+#include "genieParticle/genieParticle.h"
+#include <math.h>
+#include <string.h>
 
 #define DEC 10
 #define HEX 16

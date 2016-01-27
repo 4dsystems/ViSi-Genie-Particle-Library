@@ -1,4 +1,4 @@
-/////////////////////// GenieParticle 26/01/2016 ///////////////////////
+/////////////////////// GenieParticle 28/01/2016 ///////////////////////
 //
 //      Library to utilize the 4D Systems Genie interface to displays
 //      that have been created using the Visi-Genie creator platform.
@@ -44,15 +44,15 @@
 #define lowByte(w) ((uint8_t)((w) & 0xFF))
 #define highByte(w) ((uint8_t)((w) >> 8))
 
-//#include <inttypes.h>
-//#include <stdint.h>
+#include <inttypes.h>
+#include <stdint.h>
 
 #ifndef genieParticle_h
 #define genieParticle_h
 
 #undef GENIE_DEBUG
 
-#define GENIE_VERSION    "GenieParticle 26-01-2016"
+#define GENIE_VERSION    "GenieParticle 28-01-2016"
 
 // Genie commands & replys:
 

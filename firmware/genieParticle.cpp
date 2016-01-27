@@ -428,7 +428,7 @@ uint8_t Genie::Getchar() {
 // byte if there is.
 //
 uint16_t Genie::GetcharSerial (void) {
-#ifdef SERIAL
+//#ifdef SERIAL
 
     if (deviceSerial->available() == 0) {
         Error = ERROR_NOCHAR;
@@ -436,7 +436,7 @@ uint16_t Genie::GetcharSerial (void) {
     }
 
     return (uint16_t) deviceSerial->read() & 0xFF;
-#endif
+//#endif
 }
 
 

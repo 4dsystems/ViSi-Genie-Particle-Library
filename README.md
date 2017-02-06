@@ -3,17 +3,17 @@
 ViSi-Genie-Particle-Library - NEW VERSION - Updated 26-JAN-2016
 ==============================================================
 
-Particle Proton Library for 4D Systems ViSi-Genie Environment
+Particle Photon Library for 4D Systems ViSi-Genie Environment
 
 This library now supports support for neagative numbers, unsigned longs, unsigned integers with the WriteStr function.
 This library now features enhanced String Writing capability, no longer is a character Array the only viable option. 
 This library recently included support for the new Workshop4 PRO features.
-This library recently added support for 2+ displays connected to a single Particle Proton, and adds a new Demo to illustrate how that is achieved.
+This library recently added support for 2+ displays connected to a single Particle Photon, and adds a new Demo to illustrate how that is achieved.
 
 ## Information
 
-This library provides high level functions for the Particle Proton, to ease communication with 4D Systems modules when using the module configured with ViSi-Genie.
-This library is a version of 4D Systems ViSi-Genie-Arduino library (genieArduino) adapted for the Spark/Proton. The library is designed to use any (hardware) Serial port. On the Spark, this would be Serial1 or Serial2.
+This library provides high level functions for the Particle Photon, to ease communication with 4D Systems modules when using the module configured with ViSi-Genie.
+This library is a version of 4D Systems ViSi-Genie-Arduino library (genieArduino) adapted for the Spark/Photon. The library is designed to use any (hardware) Serial port. On the Spark, this would be Serial1 or Serial2.
 Workshop4 PRO adds additional features to ViSi-Genie, allowing the User to write 4DGL code which can be executed at will from ViSi-Genie, enabling many advanced features not previously possible.
 Please refer to the 4D Systems website, namingly the Workshop 4 Product Page, for documentation regarding Workshop 4, and its environments.
 
@@ -23,7 +23,7 @@ Inside the library are 3 example sketches, to assist with getting started using 
 
 ## Tested with
 
-This library has been tested on the Particle Proton.
+This library has been tested on the Particle Photon.
 Any problems discovered with this library, please contact technical support so fixes can be put in place, or seek support from our forum.
 
 ## Compatible 4D Systems Display Modules

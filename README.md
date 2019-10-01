@@ -1,6 +1,6 @@
-![image](http://www.4dsystems.com.au/imagenes/header.png)
+![image](http://www.4dsystems.com.au/downloads/4DLogo.png)
 
-ViSi-Genie-Particle-Library - NEW VERSION - Updated 26-JAN-2016
+ViSi-Genie-Particle-Library
 ==============================================================
 
 Particle Photon Library for 4D Systems ViSi-Genie Environment

@@ -1,10 +1,11 @@
-/////////////////////// GenieParticle 28/01/2016 ///////////////////////
+/////////////////////// GenieParticle 21/07/2020 ///////////////////////
 //
 //      Library to utilize the 4D Systems Genie interface to displays
 //      that have been created using the Visi-Genie creator platform.
 //      This is intended to be used with the Particle IO platform.
 //
 //      Improvements/Updates by (based on geneArduino library)
+//		  4D Systems Engineering, July 2020, www.4dsystems.com.au
 //        4D Systems Engineering, January 2016, www.4dsystems.com.au
 //        4D Systems Engineering, October 2015, www.4dsystems.com.au
 //        4D Systems Engineering, September 2015, www.4dsystems.com.au
@@ -22,7 +23,7 @@
 //      Based on code by
 //        Gordon Henderson, February 2013, <projects@drogon.net>
 //
-//      Copyright (c) 2012-2013 4D Systems Pty Ltd, Sydney, Australia
+//      Copyright (c) 2012-2020 4D Systems Pty Ltd, Sydney, Australia
 /*********************************************************************
  * This file is part of GenieParticle:
  *    GenieParticle is free software: you can redistribute it and/or modify
@@ -52,7 +53,7 @@
 
 #undef GENIE_DEBUG
 
-#define GENIE_VERSION    "GenieParticle 28-01-2016"
+#define GENIE_VERSION    "GenieParticle v1.1.0 21-07-2020"
 
 // Genie commands & replys:
 
@@ -113,6 +114,46 @@
 #define GENIE_OBJ_ANIBUTTON     31
 #define GENIE_OBJ_COLORPICKER   32
 #define GENIE_OBJ_USERBUTTON    33
+// reserved for magic functions 34
+#define GENIE_OBJ_SMARTGAUGE            35
+#define GENIE_OBJ_SMARTSLIDER           36
+#define GENIE_OBJ_SMARTKNOB             37
+// Not advisable to use the below 3, use the above 3 instead.
+#define GENIE_OBJ_ISMARTGAUGE           35 // Retained for backwards compatibility, however Users should use SMARTGAUGE instead of ISMARTGAUGE
+#define GENIE_OBJ_ISMARTSLIDER          36 // Retained for backwards compatibility, however Users should use SMARTSLIDER instead of ISMARTSLIDER
+#define GENIE_OBJ_ISMARTKNOB            37 // Retained for backwards compatibility, however Users should use SMARTKNOB instead of ISMARTKNOB
+// Comment end																																	  			  
+#define GENIE_OBJ_ILED_DIGITS_H         38
+#define GENIE_OBJ_IANGULAR_METER        39
+#define GENIE_OBJ_IGAUGE                40
+#define GENIE_OBJ_ILABEL                41
+#define GENIE_OBJ_IUSER_GAUGE           42
+#define GENIE_OBJ_IMEDIA_GAUGE          43
+#define GENIE_OBJ_IMEDIA_THERMOMETER    44
+#define GENIE_OBJ_ILED                  45
+#define GENIE_OBJ_IMEDIA_LED            46
+#define GENIE_OBJ_ILED_DIGITS_L         47
+#define GENIE_OBJ_ILED_DIGITS           47
+#define GENIE_OBJ_INEEDLE               48
+#define GENIE_OBJ_IRULER                49
+#define GENIE_OBJ_ILED_DIGIT            50
+#define GENIE_OBJ_IBUTTOND              51
+#define GENIE_OBJ_IBUTTONE              52
+#define GENIE_OBJ_IMEDIA_BUTTON         53
+#define GENIE_OBJ_ITOGGLE_INPUT         54
+#define GENIE_OBJ_IDIAL                 55
+#define GENIE_OBJ_IMEDIA_ROTARY         56
+#define GENIE_OBJ_IROTARY_INPUT         57
+#define GENIE_OBJ_ISWITCH               58
+#define GENIE_OBJ_ISWITCHB              59
+#define GENIE_OBJ_ISLIDERE              60
+#define GENIE_OBJ_IMEDIA_SLIDER         61
+#define GENIE_OBJ_ISLIDERH              62
+#define GENIE_OBJ_ISLIDERG              63
+#define GENIE_OBJ_ISLIDERF              64
+#define GENIE_OBJ_ISLIDERD              65
+#define GENIE_OBJ_ISLIDERC              66
+#define GENIE_OBJ_ILINEAR_INPUT         67
 
 // Structure to store replys returned from a display
 
@@ -130,6 +171,13 @@ struct MagicReportHeader {
     uint8_t         cmd;
     uint8_t         index;
     uint8_t         length;
+};
+
+union FloatLongFrame {
+    float floatValue;
+    int32_t longValue;
+    uint32_t ulongValue;
+    int16_t wordValue[2];
 };
 
 /////////////////////////////////////////////////////////////////////
@@ -175,6 +223,9 @@ public:
     void        Begin               (Stream &serial);
     bool        ReadObject          (uint16_t object, uint16_t index);
     uint16_t    WriteObject         (uint16_t object, uint16_t index, uint16_t data);
+    uint16_t    WriteIntLedDigits   (uint16_t index, int16_t data);
+    uint16_t    WriteIntLedDigits   (uint16_t index, float data);
+    uint16_t    WriteIntLedDigits   (uint16_t index, int32_t data);
     void        WriteContrast       (uint16_t value);
     uint16_t    WriteStr            (uint16_t index, char *string);
 	uint16_t	WriteStr			(uint16_t index, long n) ;

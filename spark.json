@@ -1,7 +1,7 @@
 {
 	"name": "genieParticle",
 	"author": "4D Systems Pty Ltd",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"license": "GNU Lesser General Public License",
 	"description": "4D Systems Visi-Genie library for Partile Proton"
 }

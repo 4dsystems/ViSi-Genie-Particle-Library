@@ -1,10 +1,11 @@
-/////////////////////// GenieParticle 28/01/2016 ///////////////////////
+/////////////////////// GenieParticle 21/07/2020 ///////////////////////
 //
 //      Library to utilise the 4D Systems Genie interface to displays
 //      that have been created using the Visi-Genie creator platform.
 //      This is intended to be used with the Particle IO platform.
 //
 //      Improvements/Updates by (based on geneArduino library)
+//		  4D Systems Engineering, July 2020, www.4dsystems.com.au
 //        4D Systems Engineering, January 2016, www.4dsystems.com.au
 //        4D Systems Engineering, October 2015, www.4dsystems.com.au
 //        4D Systems Engineering, September 2015, www.4dsystems.com.au
@@ -22,7 +23,7 @@
 //      Based on code by
 //        Gordon Henderson, February 2013, <projects@drogon.net>
 //
-//      Copyright (c) 2012-2014 4D Systems Pty Ltd, Sydney, Australia
+//      Copyright (c) 2012-2020 4D Systems Pty Ltd, Sydney, Australia
 /*********************************************************************
  * This file is part of GenieParticle:
  *    GenieParticle is free software: you can redistribute it and/or modify
@@ -403,7 +404,7 @@ uint16_t Genie::DoEvents (bool DoHandler) {
         }
         return GENIE_EVENT_RXCHAR;
     }
-    return GENIE_EVENT_RXCHAR; // What should we really return here?!
+    return GENIE_EVENT_RXCHAR;
 }
 
 //////////////////////// Genie::Getchar //////////////////////////
@@ -657,13 +658,43 @@ uint16_t Genie::WriteObject (uint16_t object, uint16_t index, uint16_t data) {
     PushLinkState(GENIE_LINK_WFAN);
 }
 
+/////////////////////// WriteIntLedDigits //////////////////
+//
+// Write 16-bit data to Internal LedDigits
+//
+uint16_t Genie::WriteIntLedDigits (uint16_t index, int16_t data) {
+    WriteObject(GENIE_OBJ_ILED_DIGITS_L, index, data);
+}
+
+/////////////////////// WriteIntLedDigits //////////////////
+//
+// Write 32-bit float data to Internal LedDigits
+//
+uint16_t Genie::WriteIntLedDigits (uint16_t index, float data) {
+    FloatLongFrame frame;
+    frame.floatValue = data;
+    WriteObject(GENIE_OBJ_ILED_DIGITS_H, index, frame.wordValue[1]);
+    WriteObject(GENIE_OBJ_ILED_DIGITS_L, index, frame.wordValue[0]);
+}
+
+/////////////////////// WriteIntLedDigits //////////////////
+//
+// Write 32-bit data to Internal LedDigits
+//
+uint16_t Genie::WriteIntLedDigits (uint16_t index, int32_t data) {
+    FloatLongFrame frame;
+    frame.longValue = data;
+    WriteObject(GENIE_OBJ_ILED_DIGITS_H, index, frame.wordValue[1]);
+    WriteObject(GENIE_OBJ_ILED_DIGITS_L, index, frame.wordValue[0]);
+}
+
 /////////////////////// WriteContrast //////////////////////
 //
 // Alter the display contrast (backlight)
 //
 // Parms:   uint8_t value: The required contrast setting, only
-//      values from 0 to 15 are valid. 0 or 1 for most displays
-//      and 0 to 15 for the uLCD-43, uLCD-70, uLCD-35, uLCD-220RD
+//      values from 0 to 15 are valid. 0 or 1 for most Picaso displays
+//      and 0 to 15 for most Goldelox, Pixxi-28, Pixxi-44 and Diablo displays
 //
 void Genie::WriteContrast (uint16_t value) {
     unsigned int checksum ;

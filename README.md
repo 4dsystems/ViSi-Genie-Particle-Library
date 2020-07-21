@@ -5,10 +5,11 @@ ViSi-Genie-Particle-Library
 
 Particle Photon Library for 4D Systems ViSi-Genie Environment
 
-This library now supports support for neagative numbers, unsigned longs, unsigned integers with the WriteStr function.
-This library now features enhanced String Writing capability, no longer is a character Array the only viable option. 
-This library recently included support for the new Workshop4 PRO features.
-This library recently added support for 2+ displays connected to a single Particle Photon, and adds a new Demo to illustrate how that is achieved.
+This library support for neagative numbers, unsigned longs, unsigned integers with the WriteStr function.
+This library features enhanced String Writing capability, no longer is a character Array the only viable option. 
+This library included support for the Workshop4 PRO features.
+This library has support for 2+ displays connected to a single Particle Photon, and adds a Demo to illustrate how that is achieved.
+This library also supports the internal/inherent widgets of Workshop4
 
 ## Information
 
@@ -19,7 +20,7 @@ Please refer to the 4D Systems website, namingly the Workshop 4 Product Page, fo
 
 ## Example Sketch
 
-Inside the library are 3 example sketches, to assist with getting started using this library. Inside is also a ViSi-Genie Workshop4 project, which can be used on a range of 4D Systems displays (designed on a uLCD-32PTU however can be changed via Workshop4 menu). It illustrates how to use some of the commands in the library include Read Object, Write Object, Reported Messages, Write Contrast and Write String.
+Inside the library are multiple example sketches, to assist with getting started using this library. Inside is also a ViSi-Genie Workshop4 project, which can be used on a range of 4D Systems displays (designed on a uLCD-32PTU however can be changed via Workshop4 menu). It illustrates how to use some of the commands in the library include Read Object, Write Object, Reported Messages, Write Contrast and Write String.
 
 ## Tested with
 
@@ -34,5 +35,4 @@ The demo included with this library was made for the uLCD-32PTU however can easi
 ## Questions/Issues?
 
 Please sign up for our Forum and ask a question there, or submit a Tech Support Ticket from our website.
-Please do NOT post issues on Github, as this is not actively monitored. Please use one of the following:
 http://forum.4dsystems.com.au or http://www.4dsystems.com.au/support
